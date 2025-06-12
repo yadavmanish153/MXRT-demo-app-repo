@@ -15,8 +15,8 @@ jobs:
     
     - name: Make scripts executable
       run: |
-        chmod +x ./install-dependencies.sh
-        chmod +x ./docker-build.sh
+        chmod +x ./.github/scripts/install-dependencies.sh
+        chmod +x ./.github/scripts/docker-build.sh
 
     - name: Install dependencies
       run: ./install-dependencies.sh
