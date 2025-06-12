@@ -4,9 +4,10 @@
 set -e
 
 echo "📦 Building Java Maven project..."
-current_dir=$(pwd)
+pwd
 
-cd "$current_dir"  # Ensure script runs from its own directory
+cd "$(dirname "$0")"  # Ensure script runs from its own directory
+echo "build maven"
 mvn clean install
 
 echo "✅ Java build complete!"
