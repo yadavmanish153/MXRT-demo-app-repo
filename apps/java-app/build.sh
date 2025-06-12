@@ -4,6 +4,7 @@
 set -e
 
 echo "📦 Building Java Maven project..."
+echo "$(dirname)"
 
 cd "$(dirname "$0")"  # Ensure script runs from its own directory
 mvn clean install
