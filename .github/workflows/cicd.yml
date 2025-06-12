@@ -23,5 +23,5 @@ jobs:
 
     - name: test
       run: |
-        echo pip --version
-        echo java --version
+        pip --version
+        java --version
