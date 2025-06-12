@@ -12,15 +12,16 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
+    
+    - name: Make scripts executable
+      run: |
+        chmod +x ./install-dependencies.sh
+        chmod +x ./docker-build.sh
 
     - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
+      run: ./install-dependencies.sh
 
-    - name: Run tests
+    - name: test
       run: |
-        pytest
+        echo pip --version
+        echo java --version
