@@ -19,7 +19,7 @@ jobs:
         chmod +x ./.github/scripts/docker-build.sh
 
     - name: Install dependencies
-      run: ./install-dependencies.sh
+      run: ./.github/scripts/install-dependencies.sh
 
     - name: test
       run: |
