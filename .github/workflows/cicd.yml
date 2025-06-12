@@ -16,10 +16,13 @@ jobs:
     - name: Make scripts executable
       run: |
         chmod +x ./.github/scripts/install-dependencies.sh
-        chmod +x ./.github/scripts/docker-build.sh
+        chmod +x ./.github/scripts/build.sh
 
     - name: Install dependencies
       run: ./.github/scripts/install-dependencies.sh
+
+    - name: build apps
+      run: ./.github/scripts/build.sh
 
     - name: test
       run: |
