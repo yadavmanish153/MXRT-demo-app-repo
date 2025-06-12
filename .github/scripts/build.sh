@@ -8,6 +8,7 @@ find "$ROOT_DIR" -type f -name "build.sh" | while read -r build_script; do
     # Get the directory of the build.sh script
     dir=$(dirname "$build_script")
     echo "Executing build.sh in $dir"
+    ls
     
     # Change to that directory
     (cd "$dir" && chmod +x build.sh && ./build.sh)
