@@ -12,7 +12,7 @@ find "$ROOT_DIR" -type f -name "build.sh" | while read -r build_script; do
     # Change to that directory
     cd "$dir"
     ls
-    chmod +x build.sh && ./build.sh
+    chmod +x build.sh
     
     # Optional: check if it succeeded
     if [ $? -ne 0 ]; then
