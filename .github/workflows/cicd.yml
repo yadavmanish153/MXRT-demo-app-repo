@@ -35,6 +35,6 @@ jobs:
       if: github.ref == 'refs/heads/develop'
       run: ./.github/scripts/docker-build.sh
 
-    - name: Build docker image
+    - name: Build docker push
       if: github.ref == 'refs/heads/develop'
       run: ./.github/scripts/docker-push.sh ${{ secrets.DOCKER_USERNAME }} ${{ secrets.DOCKER_PAT }} latest
