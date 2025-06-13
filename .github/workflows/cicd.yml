@@ -30,6 +30,7 @@ jobs:
       run: |
         pip --version
         java --version
+        echo ${{ secrets.DOCKER_USERNAME }}
 
     - name: Build docker image
       if: github.ref == 'refs/heads/develop'
