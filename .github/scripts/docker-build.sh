@@ -11,8 +11,8 @@ find "$ROOT_DIR" -type f -name "Dockerfile" | while read -r build_script; do
     
     # Build Docker image
     (cd "$dir" && chmod +x Dockerfile)
-    echo $(basename "$PWD")
-    image_name=basename "$PWD"
+    echo $(basename "$dir")
+    image_name=$(basename "$dir")
     tag="latest"
     echo "image_name is $image_name"
     docker build -t $image_name:$tag .
