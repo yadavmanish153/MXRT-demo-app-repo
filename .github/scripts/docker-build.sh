@@ -9,11 +9,12 @@ find "$ROOT_DIR" -type f -name "Dockerfile" | while read -r build_script; do
     dir=$(dirname "$build_script")
     echo "Executing Dockerfile in $dir"
     
-    # Change to that directory
+    # Build Docker image
     (cd "$dir" && chmod +x Dockerfile && ./Dockerfile)
     image_name=basename "$PWD"
+    tag="latest"
     echo "image_name is $image_name"
-    docker build -t image_name .
+    docker build -t $image_name:$tag .
     
     # Optional: check if it succeeded
     if [ $? -ne 0 ]; then
