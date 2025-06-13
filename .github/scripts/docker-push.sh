@@ -2,6 +2,12 @@
 
 set -e
 
+# Check if at least 3 arguments are passed
+if [ "$#" -lt 3 ]; then
+    echo "Usage: $0 <docker-username> <pat> <tag>"
+    exit 1
+fi
+
 # Set your Docker Hub username
 DOCKER_USERNAME="manishyadav153@gmail.com"
 PAT = "dckr_pat_1Ew9nI5jtxgXcyiIaN8R_9uJmXM"

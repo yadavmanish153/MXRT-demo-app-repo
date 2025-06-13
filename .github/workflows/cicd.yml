@@ -4,6 +4,10 @@ on:
   push:
     branches: [ develop ]
 
+env:
+  DOCKER_USERNAME:${{secrets.DOCKER_USERNAME}}
+  DOCKER_PAT:${{secrets.DOCKER_PAT}}
+  
 jobs:
   build:
     runs-on: ubuntu-latest
