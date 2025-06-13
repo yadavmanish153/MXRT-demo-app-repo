@@ -20,7 +20,8 @@ echo "$PAT" | docker login -u "$DOCKER_USERNAME" --password-stdin
 docker images
 
 # Get all image names that belong to your Docker Hub username
-images=$(docker images --format "{{.Repository}}:{{.Tag}}" | grep "^$DOCKER_USERNAME/")
+images=$(docker images --format "{{.Repository}}:{{.Tag}}" | grep -v "<none>")
+
 
 # Push each image
 for image in $images; do
