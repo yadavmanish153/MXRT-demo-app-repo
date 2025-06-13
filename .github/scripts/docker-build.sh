@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Check if at least 3 arguments are passed
+if [ "$#" -lt 3 ]; then
+    echo "Usage: $0 <docker-username>"
+    exit 1
+fi
+
+# Set your Docker Hub username
+DOCKER_USERNAME="$1"
+
 # Root directory to start searching from (can also be set to a specific path)
 ROOT_DIR="./apps"
 
@@ -16,6 +25,7 @@ find "$ROOT_DIR" -type f -name "Dockerfile" | while read -r build_script; do
     tag="latest"
     echo "image_name is $image_name"
     docker build -t $image_name:$tag .
+    docker tag $image_name:$tag "$DOCKER_USERNAME"/$image_name:$tag
     
     # Optional: check if it succeeded
     if [ $? -ne 0 ]; then
