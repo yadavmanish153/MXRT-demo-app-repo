@@ -27,15 +27,20 @@ jobs:
       run: ./.github/scripts/build.sh
 
     - name: test
-      run: |
-        pip --version
-        java --version
-        echo ${{ secrets.DOCKER_USERNAME }}
+      run: echo test cases not available
 
     - name: Build docker image
       if: github.ref == 'refs/heads/develop'
-      run: ./.github/scripts/docker-build.sh manishyadav153@gmail.com latest
+      run: ./.github/scripts/docker-build.sh
 
     - name: Build docker push
       if: github.ref == 'refs/heads/develop'
-      run: ./.github/scripts/docker-push.sh manishyadav153@gmail.com ${{ secrets.DOCKER_PAT }} latest
+      run: echo docker push not completed
+      #run: ./.github/scripts/docker-push.sh manishyadav153@gmail.com ${{ secrets.DOCKER_PAT }} latest
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build]
+    - name: Docker image pull
+      if: github.ref == 'refs/heads/develop'
+      run: echo Not started
