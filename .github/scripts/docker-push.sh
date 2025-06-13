@@ -9,9 +9,9 @@ if [ "$#" -lt 3 ]; then
 fi
 
 # Set your Docker Hub username
-DOCKER_USERNAME="manishyadav153@gmail.com"
-PAT = "dckr_pat_1Ew9nI5jtxgXcyiIaN8R_9uJmXM"
-TAG = "latest"
+DOCKER_USERNAME="$1"
+PAT = "$2"
+TAG = "$3"
 
 # Log in to Docker Hub
 echo "Logging in to Docker Hub..."
