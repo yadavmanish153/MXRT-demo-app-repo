@@ -17,6 +17,7 @@ jobs:
       run: |
         chmod +x ./.github/scripts/install-dependencies.sh
         chmod +x ./.github/scripts/build.sh
+        chmod +x ./.github/scripts/docker-build.sh
 
     - name: Install dependencies
       run: ./.github/scripts/install-dependencies.sh
@@ -28,3 +29,7 @@ jobs:
       run: |
         pip --version
         java --version
+
+    - name: Build docker image
+      if: github.ref == 'refs/heads/develop'
+      run: ./.github/scripts/build.sh
