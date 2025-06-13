@@ -23,10 +23,12 @@ find "$ROOT_DIR" -type f -name "Dockerfile" | while read -r build_script; do
     cd "$dir"
     echo $(basename "$dir")
     image_name=$(basename "$dir")
+    tag="latest"
+    username="manishyadav153@gmail.com"
     echo "image_name is $image_name"
-    docker build -t $image_name:$TAG .
-    echo "image generated $image_name:$TAG"
-    docker tag $image_name:$TAG $DOCKER_USERNAME/$image_name:$TAG
+    docker build -t $image_name:$tag .
+    echo "image generated $image_name:$tag"
+    docker tag $image_name:$tag $username/$image_name:$TAG
     
     # Optional: check if it succeeded
     if [ $? -ne 0 ]; then
