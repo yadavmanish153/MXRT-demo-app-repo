@@ -37,7 +37,7 @@ jobs:
       if: github.ref == 'refs/heads/develop'
       run: echo docker push not completed
       #run: ./.github/scripts/docker-push.sh manishyadav153@gmail.com ${{ secrets.DOCKER_PAT }} latest
-
+  
   deploy:
     runs-on: ubuntu-latest
     needs: [build]

@@ -1,14 +1,6 @@
 #!/bin/bash
 set -e
 
-if [ "$#" -lt 2 ]; then
-    echo "Usage: $0 <docker-username> <tag>"
-    exit 1
-fi
-
-# Set your Docker Hub username
-DOCKER_USERNAME="$1"
-TAG="$2"
 
 # Root directory to start searching from (can also be set to a specific path)
 ROOT_DIR="./apps"
