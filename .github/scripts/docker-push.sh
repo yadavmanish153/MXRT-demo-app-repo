@@ -17,6 +17,8 @@ TAG="$3"
 echo "Logging in to Docker Hub..."
 echo "$PAT" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
+docker images
+
 # Get all image names that belong to your Docker Hub username
 images=$(docker images --format "{{.Repository}}:{{.Tag}}" | grep "^$DOCKER_USERNAME/")
 
