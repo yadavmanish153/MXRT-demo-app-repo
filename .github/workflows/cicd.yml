@@ -34,8 +34,8 @@ jobs:
 
     - name: Build docker image
       if: github.ref == 'refs/heads/develop'
-      run: ./.github/scripts/docker-build.sh ${{ secrets.DOCKER_USERNAME }} latest
+      run: ./.github/scripts/docker-build.sh manishyadav153@gmail.com latest
 
     - name: Build docker push
       if: github.ref == 'refs/heads/develop'
-      run: ./.github/scripts/docker-push.sh ${{ secrets.DOCKER_USERNAME }} ${{ secrets.DOCKER_PAT }} latest
+      run: ./.github/scripts/docker-push.sh manishyadav153@gmail.com ${{ secrets.DOCKER_PAT }} latest

@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
 
-# Check if at least 3 arguments are passed
 if [ "$#" -lt 3 ]; then
     echo "Usage: $0 <docker-username> <tag>"
     exit 1
