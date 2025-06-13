@@ -41,6 +41,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: [build]
-    - name: Docker image pull
-      if: github.ref == 'refs/heads/develop'
-      run: echo Not started
+    steps:
+      - name: Docker image pull
+        if: github.ref == 'refs/heads/develop'
+        run: echo Not started
