@@ -10,8 +10,8 @@ fi
 
 # Set your Docker Hub username
 DOCKER_USERNAME="$1"
-PAT = "$2"
-TAG = "$3"
+PAT="$2"
+TAG="$3"
 
 # Log in to Docker Hub
 echo "Logging in to Docker Hub..."
